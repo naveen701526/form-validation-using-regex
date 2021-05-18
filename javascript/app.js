@@ -42,7 +42,7 @@ function validatePhone() {
     const re = /^[789]\d{9}$/;
     // source --> https://tinyurl.com/dhhm3rxs
 
-    https: if (!re.test(phone.value)) {
+    if (!re.test(phone.value)) {
         phone.classList.add('is-invalid');
     } else {
         phone.classList.remove('is-invalid');
