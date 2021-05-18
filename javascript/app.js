@@ -3,6 +3,7 @@ document.getElementById('name').addEventListener('blur', validateName);
 document.getElementById('zip').addEventListener('blur', validateZip);
 document.getElementById('email').addEventListener('blur', validateEmail);
 document.getElementById('phone').addEventListener('blur', validatePhone);
+document.getElementById('password').addEventListener('blur', validatePassword);
 
 function validateName() {
     const name = document.getElementById('name');
@@ -46,5 +47,15 @@ function validatePhone() {
         phone.classList.add('is-invalid');
     } else {
         phone.classList.remove('is-invalid');
+    }
+}
+
+function validatePassword() {
+    const password = document.getElementById('password');
+    const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{8,}$/g;
+    if (!re.test(password.value)) {
+        password.classList.add('is-invalid');
+    } else {
+        password.classList.remove('is-invalid');
     }
 }
