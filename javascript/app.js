@@ -16,7 +16,8 @@ function validateName() {
 
 function validateZip() {
     const zip = document.getElementById('zip');
-    const re = /^[0-9]{6}$/;
+    const re = /^[1-9][0-9]{5}$/;
+    // source --> https://stackoverflow.com/questions/33865525/indian-pincode-validation-regex-only-six-digits-shouldnt-start-with-0
 
     if (!re.test(zip.value)) {
         zip.classList.add('is-invalid');
@@ -36,4 +37,14 @@ function validateEmail() {
     }
 }
 
-function validatePhone() {}
+function validatePhone() {
+    const phone = document.getElementById('phone');
+    const re = /^[789]\d{9}$/;
+    // source --> https://tinyurl.com/dhhm3rxs
+
+    https: if (!re.test(phone.value)) {
+        phone.classList.add('is-invalid');
+    } else {
+        phone.classList.remove('is-invalid');
+    }
+}
